@@ -10,10 +10,14 @@
     <div class="container">
     <h1>Blog Project</h1>
     {% for blog in blogs %}
+    <br><br>
+    <hr>
         제목 : {{blog.title}} <br><br>
         작성자 : {{blog.writer}} <br><br>
-        내용 : {{blog.summary}} <a href="{% url 'detail' blog.id %}")>...more</a>
-    {% endfor %}
+        내용 미리보기 : {{blog.summary}} <a href="{% url 'detail' blog.id %}")>...more</a>
+    {% endfor %}<br>
+    <hr>
+    <a href="{% url 'new' %}">작성하기</a>
 </div>
 </body>
 </html>

@@ -10,4 +10,4 @@ class blog(models.Model) : #model을 상속받는다는 거
     def __str__(self):
         return self.title
     def summary(self):
-        return self.body[:100] #파이썬 슬래쉬 기능으로 100자까지 잘라주기
+        return self.body[:30] #파이썬 슬래쉬 기능으로 100자까지 잘라주기

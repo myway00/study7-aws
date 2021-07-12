@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+<body style="text-align: center;">
+    <h1>새로운 글 작성</h1>
+    <form action ="{% url 'create' %}" method="post">
+        {% csrf_token %} 
+        제목 : <input type="text" name="title"><br><br>
+        작성자 : <input type="text" name="writer"><Br><br>
+        본문 : <textarea name="body" id="" cols="30" rows="10"></textarea><br>
+        <br><button type="submit">저장하기</button>
+    </form>
+</body>
+</html>

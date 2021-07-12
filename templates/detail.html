@@ -11,7 +11,12 @@
     {{blog.writer}}<br><br>
     {{blog.pub_date}}
     <br>
+    <div">
     {{blog.body}}
-    
+        <br>
+    <a href="{% url 'home' %}">홈으로 돌아가기</a><br>
+    <a href="{% url 'edit' blog.id %}">편집하기</a><br>
+    <a href="{% url 'delete' blog.id %}">삭제하기</a><br>
+</div>
 </body>
 </html>
