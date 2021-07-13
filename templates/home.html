@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOG</title>
-</head>
-<body style="text-align: center;">
+{% extends 'base.html' %}
+    
+{% block content %}  
     <div class="container">
+    {% if user.is_authenticated %}
+    {{user.username}}
+    {% endif %}
     <h1>Blog Project</h1>
+
+
+
     {% for blog in blogs %}
     <br><br>
     <hr>
@@ -17,7 +17,9 @@
         내용 미리보기 : {{blog.summary}} <a href="{% url 'detail' blog.id %}")>...more</a>
     {% endfor %}<br>
     <hr>
-    <a href="{% url 'new' %}">작성하기</a>
+
 </div>
+
+{% endblock %}
 </body>
 </html>
