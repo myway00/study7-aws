@@ -5,9 +5,9 @@
     {% if user.is_authenticated %}
     {{user.username}}
     {% endif %}
+        <a href="?search=true&writer={{user.username}}">내가 쓴 글</a>
+        <!--쿼리스트링-->
     <h1>Blog Project</h1>
-
-
 
     {% for blog in blogs %}
     <br><br>

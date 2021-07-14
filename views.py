@@ -11,6 +11,12 @@ def detail(request, id):
 
 def home(request): 
     blogs=blog.objects.all()
+    search=request.GET.get('search')
+    if search=='true' : 
+        author = request.GET.get('writer')
+        blogs=blog.objects.filter(writer=author)
+        return render(request, 'home.html', {'blogs' : blogs})
+        
     paginator=Paginator(blogs, 3) #blogs를 담아와서 3개씩 쪼개서 보내주겠다
     page=request.GET.get('page') #이떄 GET방식뿐 아니라 그저 localhost의 요청이 들어와도 페이지는 보여줘야 한다
     #blogs=paginator(page) 그리고 home.html에 paginator 방식이 적용된 page정보가 blogs에 전달됨
